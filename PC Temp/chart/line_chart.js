@@ -108,11 +108,6 @@ async function fetchThingSpeakData() {
         // Päivitetään chart
         drawChart();
 
-        // Status
-        document.getElementById("status").textContent =
-            `Data päivitetty: ${new Date().toLocaleTimeString()}`;
-
-
     } catch (error) {
         console.error(
             "ThingSpeak virhe:",
@@ -124,9 +119,7 @@ async function fetchThingSpeakData() {
     }
 }
 
-
 // CHARTIN PIIRTÄMINEN
-
 function drawChart() {
     if (allData.length === 0) {
         console.log(
@@ -182,7 +175,6 @@ function drawChart() {
             position: "bottom"
         },
 
-
         hAxis: {
             title:
                 "Aika",
@@ -225,7 +217,3 @@ function drawChart() {
         options
     );
 }
-
-// AUTOMAATTINEN PÄIVITYS
-// 15 sekunnin välein haetaan uudet tiedot
-setInterval(REFRESH_INTERVAL);
