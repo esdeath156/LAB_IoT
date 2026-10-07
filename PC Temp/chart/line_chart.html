@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PC Component Monitor</title>
+
+  <!-- Google Charts -->
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <!-- Oma JavaScript -->
+  <script src="line_chart.js" defer></script>
+</head>
+
+<body>
+
+  <h1>PC CPU & GPU lämpö</h1>
+
+  <div id="line_chart"></div>
+
+  <label for="sampleSlider">
+    Datan määrä (Max viimeiset 50):
+    <span id="sampleCount">2</span>
+  </label>
+
+  <input type="range" id="sampleSlider" min="2" max="50" value="10" step="1">
+
+</body>
+
+</html>
