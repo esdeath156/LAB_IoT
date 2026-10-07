@@ -1,8 +1,6 @@
-const THINGSPEAK_URL =
-"https://api.thingspeak.com/channels/3499465/feeds.json?results=50";
+const THINGSPEAK_URL = "https://api.thingspeak.com/channels/3499465/feeds.json?results=50";
 
 const REFRESH_INTERVAL = 15000; // Päivitetään 15 sekunnin välein
-
 
 // GOOGLE CHARTS
 google.charts.load("current", {
@@ -46,7 +44,6 @@ function init() {
 }
 
 // THINGSPEAK DATAN HAKEMINEN
-
 async function fetchThingSpeakData() {
     try {
         const response = await fetch(

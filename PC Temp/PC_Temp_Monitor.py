@@ -7,17 +7,13 @@ load_dotenv()
 
 LHM_URL = "http://localhost:8085/data.json"
 THINGSPEAK_URL = "https://api.thingspeak.com/update"
-
 THINGSPEAK_API_KEY = os.getenv("THINGSPEAK_API_KEY")
-
 INTERVAL = 10  # Mittausväli sekunteina
-
 
 # TARKISTETAAN API-AVAIN
 if not THINGSPEAK_API_KEY:
     print("Virhe: THINGSPEAK_API_KEY puuttuu .env-tiedostosta.")
     exit()
-
 
 # LÄMPÖTILAN MUUTTAMINEN NUMEROKSI
 def clean_temperature(value):
@@ -26,7 +22,6 @@ def clean_temperature(value):
         '48.0 °C'
     muotoon:
         48.0
-
     Jos arvoa ei voida lukea, palautetaan None.
     """
 
@@ -40,9 +35,7 @@ def clean_temperature(value):
     except (ValueError, AttributeError):
         return None
 
-
 # LHM SENSORIEN ETSIMINEN
-
 def find_temperatures(node):
     temperatures = {}
 
@@ -77,13 +70,11 @@ def find_temperatures(node):
 
     return temperatures
 
-
 # OHJELMA
 print(" LHM -> ThingSpeak")
 print("Ohjelma käynnistetty.")
 print(f"Mittausväli: {INTERVAL} sekuntia")
 print()
-
 
 while True:
     try:
